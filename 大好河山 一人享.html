@@ -1,0 +1,155 @@
+<!DOCTYPE html>   <!- - 声明文档 国际标准- ->
+<html>
+<head>
+<meta charser="utf-8">  <!- - 国际编码 - ->
+<title>大好河山 一人享</title>
+<!- - 衣服 - ->
+<style type="text/css">
+*{
+margin:0px;
+padding:0px;
+}
+html,body{
+height:107%;
+background:#000;
+}
+#content{
+width:100%;
+height:100%;
+background-color:#000;
+}
+.size{
+margin:auto;
+width:806px;
+height:1140px;
+}
+.div1{
+background:url("1.jpg") ;
+/*background-attachment:fixed;不让他整体上去*/
+}
+.div2{
+background:url("2.jpg") ;
+}
+.div3{
+background:url("3.jpg") ;
+}
+.div4{
+background:url("4.jpg") ;
+}
+#nav{
+height:20px;
+width:100%;
+position:fixed;
+top:-21px;
+}
+#nav h1{
+float:center;
+height:60px;
+width:60px;
+}
+#nav ul{
+width:400px;
+height:30px;
+float:right;
+margin-right:60px;
+list-style:none;
+position:relative;
+}
+.choose{
+width:100px;
+height:30px;
+border-radius:15px;
+position:absolute;
+border:1px solid pink;
+
+}
+#nav ul .txt{
+width:100px;
+float:left;
+Line-height:30px;/*行高，垂直居中*/
+/*margin-lift:50px;*/
+text-align:center;/*水平居中*/
+}
+#nav ul .txt a{
+font-size:14px;
+font-family:microsoft yahei;/*微软雅黑*/
+text-decoration:none;/*去下划线*/
+color: #fff;
+}
+#l-nav{
+width:120px;
+height:264px;
+position:fixed;
+top:30%;
+left:60px;
+background: url("5.jpg") no-repeat;
+}
+#l-nav ul{
+/*padding-left:30px;*/
+margin-top:7px;
+}
+#l-nav ul li{
+color:#fff;
+list-style:none;   /*去前面的圆*/
+margin-bottom:57px;
+padding-left:30px;
+}
+#l-nav ul .cho{
+background: url("6.png") no-repeat;
+height:19px;
+}
+
+</style>
+</head>
+<body>
+<audio autoplay="autopaly">
+<source src="music.mp3" type="audio/mp3"></audio>
+<!- - id 身份证号码 唯一的，class 名字 不唯一 - ->
+<div id="content">
+<div class="size div1"></div>
+<div class="size div2"></div>
+<div class="size div3"></div>
+<div class="size div4" style="width:100%;"></div>
+</div>
+<!- - 顶部导航 - ->
+<div id="nav">
+<h1><img src="logo.jpg"></h1>
+<ul>
+<li class="txt"><a href="#">首页</a></li>
+<li class="txt"><a href="tencent://Message/?
+
+Uin=1254785609&websiteName=xuezha8.com&Menu=yes" target="_blank">联系客服</a></li>
+<li class="txt"><a href="tencent://Message/?
+
+Uin=1254785609&websiteName=xuezha8.com&Menu=yes" target="_blank">联系站长</a></li>
+<li class="txt"><a href="tencent://Message/?
+
+Uin=1254785609&websiteName=xuezha8.com&Menu=yes" target="_blank">咨询</a></li>
+<li class="choose"></li>
+</ul>
+</div>
+<!- - 左边导航 - ->
+<div id="l-nav">
+<ul>
+<li class="cho">夕阳</li>
+<li>草原</li>
+<li>沙丘</li>
+<li>川流</li>
+</ul>
+</div>
+<script type="text/javascript" src = "jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+/*页面完全加载后才会触发*/
+window.onload = function(){
+/*鼠标移至*/
+$("#nav .txt").mouseover(function(){
+var fWid = $(this).position().left + 1;
+$(".choose").stop().animate({width:"100px",left:fWid + "px"},500);
+});
+$(window).scroll(function(){
+var index = parseInt($(window).scrollTop()/$(window).height());
+$("#l-nav ul li").eq(index).addClass("cho").siblings().removeClass("cho");})
+}
+</script>
+</body>
+</html>
